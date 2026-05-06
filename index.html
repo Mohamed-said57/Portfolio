@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عمرو خالد الجبري — مصور سينمائي ومونتير</title>
+
+  <!-- ======================================================
+       الخطوط — يمكن تغيير الخط من هنا
+  ====================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* ======================================================
+       متغيرات التصميم — عدّل الألوان هنا فقط
+    ====================================================== */
+    :root {
+      --clr-bg: #0a0a0c;
+      --clr-surface: #111116;
+      --clr-card: #16161e;
+      --clr-border: #2a2a38;
+      --clr-accent: #c9a84c;
+      /* اللون الذهبي الرئيسي */
+      --clr-accent2: #e8c97a;
+      /* ذهبي فاتح */
+      --clr-text: #e8e6e0;
+      --clr-muted: #8a8898;
+      --clr-dim: #4a4a5a;
+
+      --font-display: 'Cairo', sans-serif;
+      --font-body: 'Tajawal', sans-serif;
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+
+      --shadow-glow: 0 0 40px rgba(201, 168, 76, .12);
+      --shadow-card: 0 4px 32px rgba(0, 0, 0, .5);
+    }
+
+    /* ======================================================
+       إعادة الضبط الأساسية
+    ====================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--clr-bg);
+      color: var(--clr-text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.8;
+      direction: rtl;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ======================================================
+       خلفية بنقاط زخرفية
+    ====================================================== */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(201, 168, 76, .06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(201, 168, 76, .04) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ======================================================
+       شريط التنقل
+       لتغيير روابط القائمة: ابحث عن <nav> وعدّل النصوص
+    ====================================================== */
+    nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 100;
+      background: rgba(10, 10, 12, .85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--clr-accent);
+      letter-spacing: .02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--clr-muted);
+      transition: color .2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      right: 0;
+      width: 0;
+      height: 1px;
+      background: var(--clr-accent);
+      transition: width .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--clr-accent);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* الهامبرغر للموبايل */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--clr-text);
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    /* ======================================================
+       المحتوى العام
+    ====================================================== */
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      padding: 96px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 12px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--clr-accent);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: var(--clr-text);
+      line-height: 1.25;
+      margin-bottom: 48px;
+    }
+
+    /* ======================================================
+       قسم البطل (Hero)
+       لتغيير الاسم والمسمى: ابحث عن class="hero-name" و class="hero-role"
+    ====================================================== */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 64px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .8rem;
+      color: var(--clr-muted);
+      letter-spacing: .1em;
+      margin-bottom: 20px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 36px;
+      height: 1px;
+      background: var(--clr-accent);
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 4.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      padding-bottom: 11px;
+      background: linear-gradient(135deg, var(--clr-text) 40%, var(--clr-accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-role {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: var(--clr-accent);
+      font-weight: 600;
+      margin-bottom: 24px;
+      font-family: var(--font-display);
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--clr-muted);
+      max-width: 520px;
+      line-height: 2;
+      margin-bottom: 40px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .meta-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: 100px;
+      font-size: .85rem;
+      color: var(--clr-muted);
+      transition: border-color .2s;
+    }
+
+    .meta-chip:hover {
+      border-color: var(--clr-accent);
+    }
+
+    .meta-chip svg {
+      color: var(--clr-accent);
+      flex-shrink: 0;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--clr-accent);
+      color: #0a0a0c;
+      font-weight: 700;
+      font-size: .95rem;
+      border-radius: var(--radius-sm);
+      transition: background .2s, transform .15s;
+      font-family: var(--font-display);
+    }
+
+    .btn-primary:hover {
+      background: var(--clr-accent2);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border: 1px solid var(--clr-border);
+      color: var(--clr-muted);
+      font-weight: 600;
+      font-size: .95rem;
+      border-radius: var(--radius-sm);
+      transition: border-color .2s, color .2s, transform .15s;
+      font-family: var(--font-display);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--clr-accent);
+      color: var(--clr-accent);
+      transform: translateY(-2px);
+    }
+
+    /* الصورة الشخصية / الرمز البصري */
+    .hero-visual {
+      position: relative;
+      width: 280px;
+      height: 340px;
+      flex-shrink: 0;
+    }
+
+    .hero-visual-frame {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--clr-surface), var(--clr-card));
+      border: 1px solid var(--clr-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-visual-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201, 168, 76, .15), transparent 65%);
+    }
+
+    .camera-icon {
+      font-size: 5rem;
+      opacity: .6;
+      filter: drop-shadow(0 0 20px rgba(201, 168, 76, .4));
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--clr-accent);
+      color: #0a0a0c;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 900;
+      line-height: 1.2;
+      font-size: .75rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(201, 168, 76, .35);
+    }
+
+    .hero-badge span {
+      font-size: 1.3rem;
+    }
+
+    /* ======================================================
+       قسم الخبرة
+       ═══════════════════════════════════════════════════════
+       كيفية تعديل الخبرة:
+       1. ابحث عن <div class="exp-item"> لكل شركة
+       2. عدّل <h3 class="exp-company"> باسم الشركة
+       3. عدّل <span class="exp-period"> بالفترة الزمنية
+       4. عدّل <span class="exp-location"> بالموقع
+       5. أضف أو احذف <li> داخل <ul class="exp-tasks">
+       ═══════════════════════════════════════════════════════
+       لإضافة شركة جديدة: انسخ كتلة <div class="exp-item"> كاملة
+       والصقها قبل </div> الأخيرة في .exp-timeline
+    ====================================================== -->
+    #experience { border-top: 1px solid var(--clr-border); }
+
+    .exp-timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .exp-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      right: 19px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--clr-accent), transparent);
+    }
+
+    /* ─── كتلة خبرة واحدة ─── */
+    .exp-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 24px;
+      padding-bottom: 48px;
+      position: relative;
+    }
+
+    .exp-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--clr-card);
+      border: 2px solid var(--clr-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 4px;
+      box-shadow: 0 0 16px rgba(201, 168, 76, .2);
+      font-size: 1rem;
+    }
+
+    .exp-body {
+      background: var(--clr-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      transition: border-color .25s, box-shadow .25s;
+    }
+
+    .exp-body:hover {
+      border-color: rgba(201, 168, 76, .35);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .exp-company {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--clr-text);
+    }
+
+    .exp-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .exp-period,
+    .exp-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: .78rem;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+
+    .exp-period {
+      background: rgba(201, 168, 76, .12);
+      color: var(--clr-accent);
+      border: 1px solid rgba(201, 168, 76, .2);
+    }
+
+    .exp-location {
+      background: var(--clr-surface);
+      color: var(--clr-muted);
+      border: 1px solid var(--clr-border);
+    }
+
+    .exp-tasks {
+      padding-right: 4px;
+    }
+
+    .exp-tasks li {
+      position: relative;
+      padding-right: 20px;
+      font-size: .93rem;
+      color: var(--clr-muted);
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+
+    .exp-tasks li::before {
+      content: '▸';
+      position: absolute;
+      right: 0;
+      color: var(--clr-accent);
+      font-size: .8rem;
+      top: 3px;
+    }
+
+    /* قسم البرامج التلفزيونية */
+    .tv-programs {
+      background: var(--clr-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-top: 0;
+      grid-column: 2;
+    }
+
+    .tv-programs-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--clr-accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .program-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .program-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      background: rgba(201, 168, 76, .08);
+      border: 1px solid rgba(201, 168, 76, .25);
+      border-radius: 100px;
+      font-size: .9rem;
+      color: var(--clr-text);
+      font-weight: 500;
+      transition: background .2s;
+    }
+
+    .program-tag:hover {
+      background: rgba(201, 168, 76, .15);
+    }
+
+    /* ======================================================
+       قسم المهارات
+       لتعديل المهارات: ابحث عن <div class="skill-tag">
+       وعدّل النص أو أضف مزيداً منها
+    ====================================================== -->*/
+    #skills {
+      border-top: 1px solid var(--clr-border);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .skill-group {
+      background: var(--clr-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      transition: border-color .25s;
+    }
+
+    .skill-group:hover {
+      border-color: rgba(201, 168, 76, .3);
+    }
+
+    .skill-group-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--clr-accent);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--clr-border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      padding: 8px 16px;
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-sm);
+      font-size: .85rem;
+      color: var(--clr-muted);
+      background: var(--clr-surface);
+      transition: all .2s;
+      cursor: default;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--clr-accent);
+      color: var(--clr-accent);
+      background: rgba(201, 168, 76, .06);
+      transform: translateY(-1px);
+    }
+
+    /* ======================================================
+       قسم الخدمات
+       لتعديل الخدمات: ابحث عن <div class="service-card">
+    ====================================================== -->*/
+    #services {
+      border-top: 1px solid var(--clr-border);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--clr-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      padding: 32px 24px;
+      text-align: center;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--clr-accent), transparent);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .service-card:hover {
+      border-color: rgba(201, 168, 76, .35);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--clr-text);
+    }
+
+    /* ======================================================
+       قسم المشاريع
+       لتعديل بطاقة مشروع:
+       1. ابحث عن <div class="project-card">
+       2. عدّل data-num بالرقم
+       3. عدّل <h3 class="project-title"> بالاسم
+       4. عدّل <p class="project-desc"> بالوصف
+       5. عدّل href في رابط المشروع بالرابط الحقيقي
+    ====================================================== -->*/
+    #projects {
+      border-top: 1px solid var(--clr-border);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--clr-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color .25s, transform .25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      border-color: rgba(201, 168, 76, .4);
+      transform: translateY(-4px);
+    }
+
+    .project-thumb {
+      height: 180px;
+      background: linear-gradient(135deg, var(--clr-surface), var(--clr-border));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-thumb::after {
+      content: attr(data-num);
+      position: absolute;
+      bottom: 12px;
+      left: 16px;
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(201, 168, 76, .08);
+      line-height: 1;
+    }
+
+    .project-content {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .project-tag {
+      font-size: .72rem;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(201, 168, 76, .1);
+      color: var(--clr-accent);
+      border: 1px solid rgba(201, 168, 76, .2);
+    }
+
+    .project-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--clr-text);
+    }
+
+    .project-desc {
+      font-size: .88rem;
+      color: var(--clr-muted);
+      line-height: 1.8;
+      flex: 1;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .85rem;
+      color: var(--clr-accent);
+      font-weight: 600;
+      margin-top: 4px;
+      transition: gap .2s;
+    }
+
+    .project-link:hover {
+      gap: 10px;
+    }
+
+    /* ======================================================
+       قسم التواصل
+    ====================================================== -->*/
+    #contact {
+      border-top: 1px solid var(--clr-border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-info p {
+      font-size: 1rem;
+      color: var(--clr-muted);
+      line-height: 2;
+      margin-bottom: 32px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: var(--clr-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      transition: border-color .2s;
+    }
+
+    .contact-item:hover {
+      border-color: rgba(201, 168, 76, .35);
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(201, 168, 76, .1);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item-text small {
+      display: block;
+      font-size: .72rem;
+      color: var(--clr-dim);
+      margin-bottom: 2px;
+      letter-spacing: .06em;
+    }
+
+    .contact-item-text strong {
+      font-size: .95rem;
+      color: var(--clr-text);
+      font-weight: 500;
+    }
+
+    /* بطاقة ملخص جانبية */
+    .contact-card {
+      background: var(--clr-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      text-align: center;
+    }
+
+    .contact-card-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--clr-surface), var(--clr-border));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 20px;
+      border: 2px solid var(--clr-accent);
+    }
+
+    .contact-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--clr-text);
+      margin-bottom: 4px;
+    }
+
+    .contact-card p {
+      font-size: .88rem;
+      color: var(--clr-accent);
+      margin-bottom: 24px;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: rgba(34, 197, 94, .1);
+      border: 1px solid rgba(34, 197, 94, .25);
+      border-radius: 100px;
+      font-size: .82rem;
+      color: #4ade80;
+    }
+
+    .availability::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: .5;
+        transform: scale(1.3);
+      }
+    }
+
+    /* ======================================================
+       الفوتر
+    ====================================================== -->*/
+    footer {
+      border-top: 1px solid var(--clr-border);
+      padding: 32px 24px;
+      text-align: center;
+      color: var(--clr-dim);
+      font-size: .82rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer span {
+      color: var(--clr-accent);
+    }
+
+    /* ======================================================
+       تأثيرات الدخول
+    ====================================================== -->*/
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ======================================================
+       استجابة الشاشات الصغيرة (Responsive) — محسّن بالكامل
+    ====================================================== */
+
+    /* ── Tablet: 768px – 1024px ── */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        gap: 40px;
+      }
+
+      .hero-visual {
+        width: 220px;
+        height: 270px;
+      }
+
+      .contact-grid {
+        gap: 32px;
+      }
+
+    }
+
+    /* ── Small Tablet / Large Mobile: max 900px ── */
+    @media (max-width: 900px) {
+      section {
+        padding: 72px 20px;
+      }
+
+      /* Hero */
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-eyebrow,
+      .hero-meta {
+        justify-content: center;
+      }
+
+      .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-cta {
+        justify-content: center;
+      }
+
+      /* Show a smaller hero visual instead of hiding it */
+      .hero-visual {
+        width: 180px;
+        height: 220px;
+        margin: 0 auto;
+      }
+
+      .hero-badge {
+        width: 64px;
+        height: 64px;
+        font-size: .65rem;
+        bottom: -10px;
+        right: -10px;
+      }
+
+      .hero-badge span {
+        font-size: 1.1rem;
+      }
+
+      /* Contact */
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        max-width: 400px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      /* Experience timeline */
+      .exp-timeline::before {
+        right: 16px;
+      }
+
+      .exp-item {
+        grid-template-columns: 36px 1fr;
+        gap: 16px;
+      }
+
+      .exp-dot {
+        width: 36px;
+        height: 36px;
+        font-size: .9rem;
+      }
+
+      .exp-body {
+        padding: 22px 24px;
+      }
+
+      /* TV programs card fix */
+      .tv-programs {
+        grid-column: 1;
+      }
+
+      /* Skills */
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Services */
+      .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      }
+    }
+
+    /* ── Mobile: max 640px ── */
+    @media (max-width: 640px) {
+      section {
+        padding: 56px 16px;
+      }
+
+      /* Nav */
+      .nav-links {
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 64px;
+        right: 0;
+        left: 0;
+        background: rgba(10, 10, 12, .97);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 24px 20px;
+        border-bottom: 1px solid var(--clr-border);
+        gap: 0;
+        pointer-events: auto;
+        animation: slideDown .25s ease;
+      }
+
+      .nav-links.open li {
+        border-bottom: 1px solid var(--clr-border);
+      }
+
+      .nav-links.open li:last-child {
+        border-bottom: none;
+      }
+
+      .nav-links.open a {
+        display: block;
+        padding: 14px 4px;
+        font-size: 1rem;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      /* Hamburger → X animation */
+      .nav-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      .nav-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Hero */
+      .hero-name {
+        font-size: clamp(2rem, 10vw, 3rem);
+      }
+
+      .hero-role {
+        font-size: 1rem;
+      }
+
+      .hero-meta {
+        gap: 10px;
+      }
+
+      .meta-chip {
+        font-size: .78rem;
+        padding: 6px 12px;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        justify-content: center;
+        max-width: 320px;
+      }
+
+      .hero-visual {
+        width: 150px;
+        height: 185px;
+      }
+
+      /* Experience */
+      .exp-timeline::before {
+        display: none;
+      }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-dot {
+        display: none;
+      }
+
+      .exp-body {
+        padding: 18px 18px;
+      }
+
+      .exp-header {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .exp-company {
+        font-size: 1.05rem;
+      }
+
+      /* TV Programs */
+      .tv-programs {
+        grid-column: 1;
+        padding: 20px 18px;
+      }
+
+      /* Skills */
+      .skill-group {
+        padding: 22px 18px;
+      }
+
+      /* Services */
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .service-card {
+        padding: 24px 16px;
+      }
+
+      .service-icon {
+        font-size: 2rem;
+      }
+
+      .service-name {
+        font-size: .9rem;
+      }
+
+      /* Projects */
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-thumb {
+        height: 140px;
+      }
+
+      /* Contact */
+      .contact-item-text strong {
+        font-size: .82rem;
+        word-break: break-all;
+      }
+
+      .contact-card {
+        padding: 26px 20px;
+      }
+
+      /* Section titles */
+      .section-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+        margin-bottom: 32px;
+      }
+    }
+
+    /* ── Very Small: max 400px ── */
+    @media (max-width: 400px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .nav-inner {
+        padding: 0 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       شريط التنقل — لتغيير روابط القائمة عدّل النصوص هنا
+  ====================================================== -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">عمرو الجبري</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero">الرئيسية</a></li>
+        <li><a href="#experience">الخبرة</a></li>
+        <li><a href="#skills">المهارات</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#projects">المشاريع</a></li>
+        <li><a href="#contact">التواصل</a></li>
+      </ul>
+      <div class="nav-toggle" id="navToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- =================================================
+         قسم البطل
+         لتغيير الاسم: عدّل النص في <h1 class="hero-name">
+         لتغيير المسمى: عدّل النص في <p class="hero-role">
+    ==================================================== -->
+    <section id="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow">مصور سينمائي ومونتير محترف</div>
+
+          <!-- الاسم الكامل -->
+          <h1 class="hero-name">عمرو خالد<br>الجيري</h1>
+
+          <!-- المسمى الوظيفي -->
+          <p class="hero-role">مصور سينمائي · مونتير · منتج إعلامي</p>
+
+          <p class="hero-desc">
+            أكثر من 5 سنوات من الخبرة في التصوير السينمائي وتغطية الفعاليات والإنتاج التلفزيوني.
+            أحوّل الأفكار إلى مشاهد بصرية تُحكى.
+          </p>
+
+          <!-- معلومات الاتصال السريعة — لتعديلها انظر الأيقونات والنصوص أدناه -->
+          <div class="hero-meta">
+            <!-- الموقع -->
+            <div class="meta-chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              الرياض، السعودية
+            </div>
+            <!-- رقم الهاتف — عدّل الرقم هنا وفي href -->
+            <a class="meta-chip" href="tel:0591514033">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.48a2 2 0 0 1 1.95-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.1 6.1l1.67-1.67a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              0591514033
+            </a>
+            <!-- البريد — عدّل الإيميل هنا وفي href -->
+            <a class="meta-chip" href="mailto:ammroaljbri@gmail.com">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,12 2,6" />
+              </svg>
+              ammroaljbri@gmail.com
+            </a>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#contact" class="btn-primary">تواصل معي</a>
+            <a href="#projects" class="btn-outline">أعمالي</a>
+          </div>
+        </div>
+
+        <!-- الرمز البصري - يمكن استبداله بصورة شخصية -->
+        <div class="hero-visual">
+          <div class="hero-visual-frame">
+            <span class="camera-icon">🎬</span>
+          </div>
+          <div class="hero-badge">
+            <span>5+</span>سنوات<br>خبرة
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =================================================
+         ✏️  HOW TO EDIT EXPERIENCE
+         ─────────────────────────────────────────────────
+         Each job block starts with:  ═══ بداية كتلة ═══
+         and ends with:               ═══ نهاية كتلة ═══
+
+         Inside each block you can change:
+
+           • Company name  →  <h3 class="exp-company">اسم الشركة</h3>
+
+           • YEAR RANGE    →  <span class="exp-period">2022 — الآن</span>
+                              Change the two numbers to your start/end years.
+                              Use "الآن" for a current (ongoing) position.
+                              Examples:
+                                "2020 — 2023"   (past job)
+                                "2024 — الآن"   (current job)
+
+           • Location      →  <span class="exp-location">📍 الرياض</span>
+
+           • Bullet tasks  →  Add or remove <li> lines inside <ul class="exp-tasks">
+
+           • Icon (emoji)  →  Change the emoji inside <div class="exp-dot">
+
+         ── To ADD a new job ──────────────────────────────
+         Copy everything between ═══ بداية كتلة ═══
+         and ═══ نهاية كتلة ═══ (including those comment lines),
+         paste it ABOVE the TV-programs block, then edit the copy.
+
+         ── To REMOVE a job ──────────────────────────────
+         Delete everything between ═══ بداية كتلة ═══
+         and ═══ نهاية كتلة ═══ (including those comment lines).
+    ==================================================== -->
+    <section id="experience">
+      <div class="section-label">المسيرة المهنية</div>
+      <h2 class="section-title">الخبرة العملية</h2>
+
+      <div class="exp-timeline">
+
+        <!-- ═══ بداية كتلة: شركة اللقطة الذكية ═══ -->
+        <div class="exp-item fade-in">
+          <div class="exp-dot">🎥</div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <!-- اسم الشركة -->
+              <h3 class="exp-company">شركة اللقطة الذكية</h3>
+              <div class="exp-meta">
+                <!-- الفترة الزمنية -->
+                <span class="exp-period">2022 — الآن</span>
+                <!-- الموقع -->
+                <span class="exp-location">📍 الرياض</span>
+              </div>
+            </div>
+            <!-- المهام — أضف أو احذف <li> حسب الحاجة -->
+            <ul class="exp-tasks">
+              <li>تصوير الفعاليات والمؤتمرات الكبرى باحترافية عالية في ظروف بيئية متنوعة</li>
+              <li>تشغيل الكاميرات السينمائية وضبط الإعدادات التقنية (ISO، Aperture، Shutter Speed) في الوقت الفعلي</li>
+              <li>تجهيز منظومة الإضاءة المناسبة حسب طبيعة بيئة التصوير الداخلية والخارجية</li>
+              <li>تسجيل الصوت الاحترافي باستخدام ميكروفونات Lavalier وShotgun للحصول على جودة بث عالية</li>
+              <li>العمل تحت ضغط مباشر في الأحداث الحية دون إمكانية إعادة التصوير</li>
+              <li>إخراج الفيديو النهائي عبر مونتاج احترافي باستخدام Premiere Pro وAfter Effects</li>
+              <li>تصحيح الألوان (Color Grading) وفق هوية كل عميل وأسلوب المحتوى</li>
+            </ul>
+          </div>
+        </div>
+        <!-- ═══ نهاية كتلة: شركة اللقطة الذكية ═══ -->
+
+
+        <!-- ═══ بداية كتلة: شركة الظل الإعلامية ═══ -->
+        <div class="exp-item fade-in">
+          <div class="exp-dot">📽️</div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <h3 class="exp-company">شركة الظل الإعلامية</h3>
+              <div class="exp-meta">
+                <span class="exp-period">2020 — 2022</span>
+                <span class="exp-location">📍 الرياض</span>
+              </div>
+            </div>
+            <ul class="exp-tasks">
+              <li>المشاركة في إنتاج المحتوى الإعلامي التلفزيوني والرقمي بمستوى بث تجاري</li>
+              <li>التنقل بسلاسة بين اللقطات المختلفة (Wide / Medium / Close-up) خلال الأحداث المباشرة</li>
+              <li>التعاون مع فريق الإنتاج والمخرج لضمان الرؤية البصرية الموحدة</li>
+              <li>إدارة تركيبة الكادر (Shot Composition) لإنتاج محتوى جذاب بصرياً</li>
+              <li>استخدام الجيمبال والمثبتات لتحقيق حركات كاميرا سلسة واحترافية</li>
+              <li>تحرير المحتوى وتسليمه في المواعيد المحددة مع الحفاظ على الجودة العالية</li>
+            </ul>
+          </div>
+        </div>
+        <!-- ═══ نهاية كتلة: شركة الظل الإعلامية ═══ -->
+
+
+        <!-- ═══ بداية كتلة: شركة المدينة للإنتاج الفني (اليمن) ═══ -->
+        <div class="exp-item fade-in">
+          <div class="exp-dot">🎞️</div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <h3 class="exp-company">شركة المدينة للإنتاج الفني</h3>
+              <div class="exp-meta">
+                <span class="exp-period">2018 — 2020</span>
+                <span class="exp-location">📍 اليمن</span>
+              </div>
+            </div>
+            <ul class="exp-tasks">
+              <li>تنفيذ مشاريع إنتاج درامي وإعلاني في بيئة إنتاجية احترافية</li>
+              <li>الإشراف على تجهيز وضبط منظومة الإضاءة للمشاهد الداخلية والخارجية</li>
+              <li>المشاركة في مراحل ما قبل الإنتاج (التخطيط لقائمة اللقطات وتحديد الزوايا)</li>
+              <li>تطبيق تقنيات المونتاج الاحترافي لإنتاج مقاطع إعلانية وترويجية</li>
+              <li>التعامل مع متطلبات الإنتاج الميداني في مواقع تصوير متنوعة</li>
+              <li>التنسيق مع المخرجين والمنتجين لضمان تحقيق الرؤية الإبداعية</li>
+            </ul>
+          </div>
+        </div>
+        <!-- ═══ نهاية كتلة: شركة المدينة للإنتاج الفني ═══ -->
+
+
+        <!-- ═══ بداية كتلة: شركة النافذة (اليمن) ═══ -->
+        <div class="exp-item fade-in">
+          <div class="exp-dot">🎬</div>
+          <div class="exp-body">
+            <div class="exp-header">
+              <h3 class="exp-company">شركة النافذة</h3>
+              <div class="exp-meta">
+                <span class="exp-period">2016 — 2018</span>
+                <span class="exp-location">📍 اليمن</span>
+              </div>
+            </div>
+            <ul class="exp-tasks">
+              <li>بداية المسيرة المهنية في مجال التصوير الإعلامي والتوثيق البصري</li>
+              <li>المشاركة في تغطية الفعاليات الثقافية والاجتماعية المحلية</li>
+              <li>تعلم أساسيات التصوير السينمائي وإدارة الكاميرا ميدانياً</li>
+              <li>المساهمة في تحرير المحتوى المرئي وإعداده للنشر والبث</li>
+              <li>اكتساب مهارات العمل ضمن فريق الإنتاج الإعلامي الاحترافي</li>
+            </ul>
+          </div>
+        </div>
+        <!-- ═══ نهاية كتلة: شركة النافذة ═══ -->
+
+
+        <!-- ═══ قسم البرامج التلفزيونية ═══ -->
+        <!-- لإضافة برنامج: أضف <span class="program-tag"> جديدة -->
+        <div class="exp-item fade-in">
+          <div class="exp-dot">📺</div>
+          <div class="exp-body">
+            <div class="tv-programs-title">📺 البرامج التلفزيونية</div>
+            <div class="program-list">
+              <!-- البرنامج 1 -->
+              <span class="program-tag">🎲 رحلة حظ</span>
+              <!-- البرنامج 2 -->
+              <span class="program-tag">💍 زواجك علينا</span>
+            </div>
+          </div>
+        </div>
+        <!-- ═══ نهاية قسم البرامج ═══ -->
+
+      </div><!-- /exp-timeline -->
+    </section>
+
+
+    <!-- =================================================
+         قسم المهارات
+         لإضافة مهارة: أضف <span class="skill-tag">اسم المهارة</span>
+         لحذف مهارة: احذف السطر المقابل
+    ==================================================== -->
+    <section id="skills">
+      <div class="section-label">الكفاءات</div>
+      <h2 class="section-title">المهارات</h2>
+
+      <div class="skills-grid">
+
+        <!-- المجموعة 1: المهارات التقنية -->
+        <div class="skill-group fade-in">
+          <div class="skill-group-title">
+            <span>⚙️</span> مهارات تقنية
+          </div>
+          <div class="skill-tags">
+            <!-- لإضافة مهارة تقنية: انسخ السطر التالي وعدّل النص -->
+            <span class="skill-tag">تشغيل الكاميرات السينمائية</span>
+            <span class="skill-tag">الإضاءة الاحترافية</span>
+            <span class="skill-tag">تسجيل الصوت</span>
+            <span class="skill-tag">Adobe Premiere Pro</span>
+            <span class="skill-tag">After Effects</span>
+            <span class="skill-tag">Color Grading</span>
+            <span class="skill-tag">إعداد المشاهد (Shot Composition)</span>
+            <span class="skill-tag">الجيمبال والمثبتات</span>
+            <span class="skill-tag">DaVinci Resolve</span>
+          </div>
+        </div>
+
+        <!-- المجموعة 2: مهارات سوق العمل -->
+        <div class="skill-group fade-in">
+          <div class="skill-group-title">
+            <span>🤝</span> مهارات سوق العمل
+          </div>
+          <div class="skill-tags">
+            <!-- لإضافة مهارة: انسخ السطر التالي وعدّل النص -->
+            <span class="skill-tag">التواصل مع العملاء</span>
+            <span class="skill-tag">العمل ضمن فريق إنتاج</span>
+            <span class="skill-tag">إدارة الوقت والمواعيد</span>
+            <span class="skill-tag">حل المشاكل أثناء التصوير</span>
+            <span class="skill-tag">العمل تحت الضغط</span>
+            <span class="skill-tag">تحويل رؤية العميل لفيديو</span>
+            <span class="skill-tag">التخطيط الإنتاجي</span>
+            <span class="skill-tag">تسليم المشاريع في الموعد</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================================
+         قسم الخدمات
+         لتعديل خدمة: ابحث عن الأيقونة والاسم وعدّلهما
+         لإضافة خدمة: انسخ <div class="service-card"> وعدّله
+    ==================================================== -->
+    <section id="services">
+      <div class="section-label">ما أقدمه</div>
+      <h2 class="section-title">الخدمات</h2>
+
+      <div class="services-grid">
+
+        <!-- الخدمة 1 — عدّل الأيقونة والاسم هنا -->
+        <div class="service-card fade-in">
+          <span class="service-icon">📺</span>
+          <div class="service-name">إنتاج البرامج التلفزيونية</div>
+        </div>
+
+        <!-- الخدمة 2 -->
+        <div class="service-card fade-in">
+          <span class="service-icon">🎪</span>
+          <div class="service-name">تغطية الفعاليات</div>
+        </div>
+
+        <!-- الخدمة 3 -->
+        <div class="service-card fade-in">
+          <span class="service-icon">🏛️</span>
+          <div class="service-name">تصوير المؤتمرات</div>
+        </div>
+
+        <!-- الخدمة 4 -->
+        <div class="service-card fade-in">
+          <span class="service-icon">🎬</span>
+          <div class="service-name">التصوير السينمائي</div>
+        </div>
+
+        <!-- الخدمة 5 -->
+        <div class="service-card fade-in">
+          <span class="service-icon">✂️</span>
+          <div class="service-name">المونتاج الاحترافي</div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =================================================
+         ✏️  HOW TO EDIT PROJECTS
+         ─────────────────────────────────────────────────
+         Each project block starts with:  ═══ المشروع N ═══
+         and ends with:                   ═══ نهاية المشروع N ═══
+
+         Inside each block you can change:
+
+           • Card number   →  data-num="01"  (change 01 / 02 / 03 …)
+
+           • Emoji icon    →  the emoji directly inside <div class="project-thumb">
+
+           • Category tags →  edit <span class="project-tag"> text
+                              Add more tags by copying a <span class="project-tag"> line.
+
+           • Title         →  <h3 class="project-title">عنوان المشروع</h3>
+
+           • Description   →  the text inside <p class="project-desc">
+
+           • YEAR / date   →  you can add a year tag alongside the category tags:
+                              <span class="project-tag">2024</span>
+
+           • Link          →  change  href="#"  to the real URL of your work
+                              e.g.  href="https://youtu.be/your-video-id"
+
+         ── To ADD a new project ─────────────────────────
+         Copy everything between ═══ المشروع N ═══
+         and ═══ نهاية المشروع N ═══ (including those comment lines),
+         paste it at the bottom of .projects-grid, increment data-num,
+         then edit the copy.
+
+         ── To REMOVE a project ─────────────────────────
+         Delete the entire block between the two comment markers.
+    ==================================================== -->
+    <section id="projects">
+      <div class="section-label">أعمالي</div>
+      <h2 class="section-title">المشاريع</h2>
+
+      <div class="projects-grid">
+
+        <!-- ═══ المشروع 1 ═══ -->
+        <div class="project-card fade-in">
+          <div class="project-thumb" data-num="01">🎥</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <!-- عدّل التاجات حسب نوع المشروع -->
+              <span class="project-tag">تلفزيون</span>
+              <span class="project-tag">مونتاج</span>
+            </div>
+            <!-- عنوان المشروع -->
+            <h3 class="project-title">برنامج رحلة حظ</h3>
+            <!-- وصف المشروع -->
+            <p class="project-desc">
+              تصوير ومونتاج برنامج ترفيهي تلفزيوني بالكامل، بما يشمل التصوير الميداني وتصحيح الألوان والمونتاج النهائي.
+            </p>
+            <a href="https://drive.google.com/file/d/15FuHAn8vg-LK5jSvJQKeHwI2TwLSYo1S/view" class="project-link">مشاهدة
+              العمل →</a>
+          </div>
+        </div>
+        <!-- ═══ نهاية المشروع 1 ═══ -->
+
+
+        <!-- ═══ المشروع 2 ═══ -->
+        <div class="project-card fade-in">
+          <div class="project-thumb" data-num="02">💍</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">اجتماعي</span>
+              <span class="project-tag">إنتاج</span>
+            </div>
+            <h3 class="project-title">برنامج زواجك علينا</h3>
+            <p class="project-desc">
+              إنتاج وتصوير برنامج اجتماعي، شامل التصوير متعدد الكاميرات وإدارة الصوت والمونتاج الاحترافي.
+            </p>
+            <a href="https://drive.google.com/file/d/1GiR_Mq_BrNceaMh2qvMvictIL-WlWHd8/view" class="project-link">مشاهدة
+              العمل →</a>
+          </div>
+        </div>
+        <!-- ═══ نهاية المشروع 2 ═══ -->
+
+
+        <!-- ═══ المشروع 3 ═══ -->
+        <div class="project-card fade-in">
+          <div class="project-thumb" data-num="03">🏆</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="project-tag">فعالية</span>
+              <span class="project-tag">مؤتمر</span>
+            </div>
+            <!-- عدّل العنوان والوصف والرابط بعمل حقيقي -->
+            <h3 class="project-title">تغطية مؤتمر دولي</h3>
+            <p class="project-desc">
+              تغطية مرئية متكاملة لمؤتمر دولي كبير، تضمنت التصوير الميداني والبث المباشر وتوثيق جلسات العمل.
+            </p>
+            <a href="https://drive.google.com/file/d/1EsDexjzxkDyqY1LKxyII-q_R1nqBpdCr/view" class="project-link">مشاهدة
+              العمل →</a>
+          </div>
+        </div>
+        <!-- ═══ نهاية المشروع 3 ═══ -->
+
+      </div>
+    </section>
+
+
+    <!-- =================================================
+         قسم التواصل
+         لتعديل معلومات الاتصال: ابحث عن .contact-item وعدّل النص وhref
+    ==================================================== -->
+    <section id="contact">
+      <div class="section-label">ابقى على تواصل</div>
+      <h2 class="section-title">تواصل معي</h2>
+
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <p>
+            هل تبحث عن مصور سينمائي محترف لمشروعك القادم؟
+            سواء كان فعالية، برنامجاً تلفزيونياً، أو محتوى رقمياً،
+            أنا هنا لتحويل رؤيتك إلى صورة تُحكى.
+          </p>
+
+          <div class="contact-list">
+
+            <!-- رقم الهاتف — عدّل الرقم هنا وفي href -->
+            <a class="contact-item" href="tel:0591514033">
+              <div class="contact-icon">📞</div>
+              <div class="contact-item-text">
+                <small>الهاتف</small>
+                <strong>0591514033</strong>
+              </div>
+            </a>
+
+            <!-- البريد الإلكتروني — عدّل الإيميل هنا وفي href -->
+            <a class="contact-item" href="mailto:ammroaljbri@gmail.com">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-item-text">
+                <small>البريد الإلكتروني</small>
+                <strong>ammroaljbri@gmail.com</strong>
+              </div>
+            </a>
+
+            <!-- الموقع — عدّل المدينة هنا -->
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div class="contact-item-text">
+                <small>الموقع</small>
+                <strong>الرياض، المملكة العربية السعودية</strong>
+                <br>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- بطاقة الملخص الجانبية -->
+        <div class="contact-card fade-in">
+          <div class="contact-card-avatar">🎬</div>
+          <h3>عمرو خالد الجبري</h3>
+          <p>مصور سينمائي ومونتير</p>
+          <div class="availability">متاح للمشاريع الجديدة</div>
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- /main -->
+
+
+  <!-- =================================================
+       الفوتر — عدّل النص أسفله إذا أردت
+  ==================================================== -->
+  <footer>
+    <!-- ⬇ Year updates automatically — no need to edit manually -->
+    <p>صُنع بـ<span> ♥ </span>· عمرو خالد الجبري © <span id="footerYear"></span></p>
+  </footer>
+
+
+  <!-- =================================================
+       JavaScript — لا داعي للتعديل هنا
+  ==================================================== -->
+  <script>
+    // ── السنة التلقائية في الفوتر ──
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    // ── تأثير الظهور عند التمرير ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ── قائمة الموبايل ──
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    function closeMenu() {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('active');
+    }
+
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active', isOpen);
+    });
+
+    // إغلاق عند النقر على رابط
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', closeMenu);
+    });
+
+    // إغلاق عند النقر خارج القائمة
+    document.addEventListener('click', (e) => {
+      if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // إغلاق عند تغيير حجم الشاشة للكمبيوتر
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 640) closeMenu();
+    });
+  </script>
+
+</body>
+
+</html>
