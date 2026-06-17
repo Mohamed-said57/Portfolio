@@ -429,8 +429,7 @@
        كيفية تعديل الخبرة:
        1. ابحث عن <div class="exp-item"> لكل شركة
        2. عدّل <h3 class="exp-company"> باسم الشركة
-       3. عدّل <span class="exp-period"> بالفترة الزمنية
-       4. عدّل <span class="exp-location"> بالموقع
+       3. عدّل  class="exp-location"> بالموقع
        5. أضف أو احذف <li> داخل <ul class="exp-tasks">
        ═══════════════════════════════════════════════════════
        لإضافة شركة جديدة: انسخ كتلة <div class="exp-item"> كاملة
@@ -826,7 +825,6 @@
       align-items: center;
       gap: 6px;
       font-size: .85rem;
-      color: var(--clr-accent);
       font-weight: 600;
       margin-top: 4px;
       transition: gap .2s;
@@ -1356,17 +1354,17 @@
     <section id="hero">
       <div class="hero-grid">
         <div>
-          <div class="hero-eyebrow">مصور سينمائي ومونتير محترف</div>
+          <div class="hero-eyebrow">مصور فيديو</div>
 
           <!-- الاسم الكامل -->
-          <h1 class="hero-name">عمرو خالد<br>الجبري</h1>
+          <h1 class="hero-name">عمرو خالد<br>الجيري</h1>
 
           <!-- المسمى الوظيفي -->
-          <p class="hero-role">مصور سينمائي · مونتير · منتج إعلامي</p>
+          <p class="hero-role">مصور فيديو</p>
 
           <p class="hero-desc">
-            أكثر من 5 سنوات من الخبرة في التصوير السينمائي وتغطية الفعاليات والإنتاج التلفزيوني.
-            أحوّل الأفكار إلى مشاهد بصرية تُحكى.
+            خبرة واسعة في التصوير السينمائي وتغطية الفعاليات والإنتاج التلفزيوني.
+            أحوّل الأفكار إلى مشاهد بصرية ذكية.
           </p>
 
           <!-- معلومات الاتصال السريعة — لتعديلها انظر الأيقونات والنصوص أدناه -->
@@ -1426,15 +1424,6 @@
 
            • Company name  →  <h3 class="exp-company">اسم الشركة</h3>
 
-           • YEAR RANGE    →  <span class="exp-period">2022 — الآن</span>
-                              Change the two numbers to your start/end years.
-                              Use "الآن" for a current (ongoing) position.
-                              Examples:
-                                "2020 — 2023"   (past job)
-                                "2024 — الآن"   (current job)
-
-           • Location      →  <span class="exp-location">📍 الرياض</span>
-
            • Bullet tasks  →  Add or remove <li> lines inside <ul class="exp-tasks">
 
            • Icon (emoji)  →  Change the emoji inside <div class="exp-dot">
@@ -1462,21 +1451,15 @@
               <!-- اسم الشركة -->
               <h3 class="exp-company">شركة اللقطة الذكية</h3>
               <div class="exp-meta">
-                <!-- الفترة الزمنية -->
-                <span class="exp-period">2022 — الآن</span>
                 <!-- الموقع -->
-                <span class="exp-location">📍 الرياض</span>
               </div>
             </div>
             <!-- المهام — أضف أو احذف <li> حسب الحاجة -->
             <ul class="exp-tasks">
               <li>تصوير الفعاليات والمؤتمرات الكبرى باحترافية عالية في ظروف بيئية متنوعة</li>
               <li>تشغيل الكاميرات السينمائية وضبط الإعدادات التقنية (ISO، Aperture، Shutter Speed) في الوقت الفعلي</li>
-              <li>تجهيز منظومة الإضاءة المناسبة حسب طبيعة بيئة التصوير الداخلية والخارجية</li>
               <li>تسجيل الصوت الاحترافي باستخدام ميكروفونات Lavalier وShotgun للحصول على جودة بث عالية</li>
               <li>العمل تحت ضغط مباشر في الأحداث الحية دون إمكانية إعادة التصوير</li>
-              <li>إخراج الفيديو النهائي عبر مونتاج احترافي باستخدام Premiere Pro وAfter Effects</li>
-              <li>تصحيح الألوان (Color Grading) وفق هوية كل عميل وأسلوب المحتوى</li>
             </ul>
           </div>
         </div>
@@ -1490,8 +1473,6 @@
             <div class="exp-header">
               <h3 class="exp-company">شركة الظل الإعلامية</h3>
               <div class="exp-meta">
-                <span class="exp-period">2020 — 2022</span>
-                <span class="exp-location">📍 الرياض</span>
               </div>
             </div>
             <ul class="exp-tasks">
@@ -1514,8 +1495,6 @@
             <div class="exp-header">
               <h3 class="exp-company">شركة المدينة للإنتاج الفني</h3>
               <div class="exp-meta">
-                <span class="exp-period">2018 — 2020</span>
-                <span class="exp-location">📍 اليمن</span>
               </div>
             </div>
             <ul class="exp-tasks">
@@ -1538,8 +1517,6 @@
             <div class="exp-header">
               <h3 class="exp-company">شركة النافذة</h3>
               <div class="exp-meta">
-                <span class="exp-period">2016 — 2018</span>
-                <span class="exp-location">📍 اليمن</span>
               </div>
             </div>
             <ul class="exp-tasks">
@@ -1593,14 +1570,8 @@
           <div class="skill-tags">
             <!-- لإضافة مهارة تقنية: انسخ السطر التالي وعدّل النص -->
             <span class="skill-tag">تشغيل الكاميرات السينمائية</span>
-            <span class="skill-tag">الإضاءة الاحترافية</span>
-            <span class="skill-tag">تسجيل الصوت</span>
-            <span class="skill-tag">Adobe Premiere Pro</span>
-            <span class="skill-tag">After Effects</span>
-            <span class="skill-tag">Color Grading</span>
             <span class="skill-tag">إعداد المشاهد (Shot Composition)</span>
             <span class="skill-tag">الجيمبال والمثبتات</span>
-            <span class="skill-tag">DaVinci Resolve</span>
           </div>
         </div>
 
@@ -1658,14 +1629,9 @@
         <!-- الخدمة 4 -->
         <div class="service-card fade-in">
           <span class="service-icon">🎬</span>
-          <div class="service-name">التصوير السينمائي</div>
+          <div class="service-name">تصوير فيديو</div>
         </div>
 
-        <!-- الخدمة 5 -->
-        <div class="service-card fade-in">
-          <span class="service-icon">✂️</span>
-          <div class="service-name">المونتاج الاحترافي</div>
-        </div>
 
       </div>
     </section>
@@ -1713,7 +1679,9 @@
 
         <!-- ═══ المشروع 1 ═══ -->
         <div class="project-card fade-in">
-          <div class="project-thumb" data-num="01">🎥</div>
+        <div class="project-thumb">
+          <img src="project2.jpg" alt="برنامج رحلة حظ">
+        </div>
           <div class="project-content">
             <div class="project-tags">
               <!-- عدّل التاجات حسب نوع المشروع -->
@@ -1726,7 +1694,7 @@
             <p class="project-desc">
               تصوير ومونتاج برنامج ترفيهي تلفزيوني بالكامل، بما يشمل التصوير الميداني وتصحيح الألوان والمونتاج النهائي.
             </p>
-            <a href="https://drive.google.com/file/d/15FuHAn8vg-LK5jSvJQKeHwI2TwLSYo1S/view" class="project-link">مشاهدة
+            <a href="https://youtu.be/evaPR5-ReoI?si=wuDCmGEy5L-6R4GX" class="project-link">مشاهدة
               العمل →</a>
           </div>
         </div>
@@ -1735,7 +1703,9 @@
 
         <!-- ═══ المشروع 2 ═══ -->
         <div class="project-card fade-in">
-          <div class="project-thumb" data-num="02">💍</div>
+          <div class="project-thumb">
+            <img src="project1.jpg" alt="برنامج زواجك علينا">
+          </div>
           <div class="project-content">
             <div class="project-tags">
               <span class="project-tag">اجتماعي</span>
@@ -1745,7 +1715,7 @@
             <p class="project-desc">
               إنتاج وتصوير برنامج اجتماعي، شامل التصوير متعدد الكاميرات وإدارة الصوت والمونتاج الاحترافي.
             </p>
-            <a href="https://drive.google.com/file/d/1GiR_Mq_BrNceaMh2qvMvictIL-WlWHd8/view" class="project-link">مشاهدة
+            <a href="https://youtu.be/pgkQ6uoKKgE?si=xjzNtcBtrZj_gtfh">مشاهدة
               العمل →</a>
           </div>
         </div>
@@ -1754,7 +1724,9 @@
 
         <!-- ═══ المشروع 3 ═══ -->
         <div class="project-card fade-in">
-          <div class="project-thumb" data-num="03">🏆</div>
+         <div class="project-thumb">
+            <img src="project3.jpg" alt="برنامج زواجك علينا">
+          </div>
           <div class="project-content">
             <div class="project-tags">
               <span class="project-tag">فعالية</span>
@@ -1765,7 +1737,7 @@
             <p class="project-desc">
               تغطية مرئية متكاملة لمؤتمر دولي كبير، تضمنت التصوير الميداني والبث المباشر وتوثيق جلسات العمل.
             </p>
-            <a href="https://drive.google.com/file/d/1EsDexjzxkDyqY1LKxyII-q_R1nqBpdCr/view" class="project-link">مشاهدة
+            <a href="https://youtu.be/pgkQ6uoKKgE?si=xjzNtcBtrZj_gtfh" class="project-link">مشاهدة
               العمل →</a>
           </div>
         </div>
